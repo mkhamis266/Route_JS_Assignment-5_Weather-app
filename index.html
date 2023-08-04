@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.18/sweetalert2.css" integrity="sha512-K0TEY7Pji02TnO4NY04f+IU66vsp8z3ecHoID7y0FSVRJHdlaLp/TkhS5WDL3OygMkVns4bz0/ah4j8M3GgguA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/all.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-transparent mb-5">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="imgs/logo@2x.png" width="70" class="img-fluid me-3" alt="" />
+          <div>
+            <h6 class="fs-5">Weather App</h6>
+            <small class="fs-6">the best weather app</small>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">News</a>
+            <a class="nav-link" href="#">Photos</a>
+            <a class="nav-link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="py-5">
+      <section class="hero-section py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="weather-card rounded text-white">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-5 ps-0">
+                      <div class="weather-day-info rounded p-3 d-flex flex-column justify-content-around">
+                        <div class="overlay"></div>
+                        <div class="day-date-info">
+                          <p class="day-name mb-0 fs-4 fw-bold">Tuesday</p>
+                          <p class="date mb-3 fs-6 fw-bold">15 Jan 2019</p>
+                          <p class="city fs-6">Alexandria, Egypt</p>
+                        </div>
+                        <div class="day-weather">
+                          <div class="weather-icon">
+                            <img src="..." alt="" />
+                          </div>
+                          <h2 class="temperature"><span class="degree">0</span><sup>o</sup>C</h2>
+                          <h3 class="condition">Sunny</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-7 py-3 d-flex flex-column justify-content-around">
+                      <div class="weather-main-info p-3 mb-1">
+                        <div class="main-info">
+                          <div class="d-flex justify-content-between mb-1">
+                            <h5>PRECIPITATION</h5>
+                            <h6><span class="precipitation">0</span> %</h6>
+                          </div>
+                          <div class="d-flex justify-content-between mb-1">
+                            <h5>HUMIDITY</h5>
+                            <h6><span class="humidity">34</span> %</h6>
+                          </div>
+                          <div class="d-flex justify-content-between mb-1">
+                            <h5>WIND</h5>
+                            <h6><span class="wind">340</span> km/h</h6>
+                          </div>
+                        </div>
+                        <div></div>
+                      </div>
+                      <div class="week-days mb-3">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col p-0">
+                              <div class="day py-2 rounded text-center active">
+                                <div class="weather-img d-flex justify-content-center p-1">
+                                  <img src="..." class="img-fluid" alt="" />
+                                </div>
+                                <h6 class="fw-bold">TUE</h6>
+                                <h6 class="fw-bold"><span class="degree">0</span> <sup>o</sup>C</h6>
+                              </div>
+                            </div>
+                            <div class="col p-0">
+                              <div class="day py-2 rounded text-center">
+                                <div class="weather-img d-flex justify-content-center p-1">
+                                  <img src="..." class="img-fluid" alt="" />
+                                </div>
+                                <h6 class="fw-bold">TUE</h6>
+                                <h6 class="fw-bold"><span class="degree">0</span> <sup>o</sup>C</h6>
+                              </div>
+                            </div>
+                            <div class="col p-0">
+                              <div class="day py-2 rounded text-center">
+                                <div class="weather-img d-flex justify-content-center p-1">
+                                  <img src="..." class="img-fluid" alt="" />
+                                </div>
+                                <h6 class="fw-bold">TUE</h6>
+                                <h6 class="fw-bold"><span class="degree">0</span> <sup>o</sup>C</h6>
+                              </div>
+                            </div>
+                            <div class="col p-0">
+                              <div class="day py-2 rounded text-center">
+                                <div class="weather-img d-flex justify-content-center p-1">
+                                  <img src="..." class="img-fluid" alt="" />
+                                </div>
+                                <h6 class="fw-bold">TUE</h6>
+                                <h6 class="fw-bold"><span class="degree">0</span> <sup>o</sup>C</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="change-city-form">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="enter city name" />
+                          <button class="btn btn-primary change-location">change location</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <form class="subscript-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="enter your email to subscribe" />
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <div class="social-links d-flex justify-content-center">
+              <a href="#" class="rounded-circle me-3">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="rounded-circle me-3">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="rounded-circle me-3">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="#" class="rounded-circle me-3">
+                <i class="fa-brands fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-4">
+        <p>Copyright 2023 Route. Designed by Mahmoud Khamis. All rights reserved</p>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
