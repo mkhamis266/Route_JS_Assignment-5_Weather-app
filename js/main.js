@@ -45,40 +45,18 @@ function loadCoordinates() {
   });
 }
 
-function loadCity(coordinates) {
-  const xhr = new XMLHttpRequest();
+async function loadCity(coordinates) {
   const lat = coordinates[0];
   const lng = coordinates[1];
-  xhr.open("GET", "https://us1.locationiq.com/v1/reverse.php?key=" + LocationIQToken + "&lat=" + lat + "&lon=" + lng + "&format=json", true);
-  xhr.send();
-
-  return new Promise(function (resolve, reject) {
-    xhr.addEventListener(
-      "readystatechange",
-      function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          const response = JSON.parse(xhr.responseText);
-          cityName = response.address.city.toLowerCase();
-          resolve(cityName);
-        }
-      },
-      false
-    );
-  });
+  const data = await fetch("https://us1.locationiq.com/v1/reverse.php?key=" + LocationIQToken + "&lat=" + lat + "&lon=" + lng + "&format=json");
+  const response = await data.json();
+  return response.address.city.toLowerCase();
 }
 
-function loadCurrentWeather(cityName) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://api.weatherapi.com/v1/forecast.json?key=" + weatherAPI_Key + "&q=" + cityName + "&days=4&aqi=no&alerts=no");
-  xhr.send();
-  return new Promise((resolve, reject) => {
-    xhr.addEventListener("readystatechange", function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        const currentWeather = JSON.parse(xhr.response);
-        resolve(currentWeather);
-      }
-    });
-  });
+
+async function loadCurrentWeather(cityName){
+  const data = await fetch("http://api.weatherapi.com/v1/forecast.json?key=" + weatherAPI_Key + "&q=" + cityName + "&days=4&aqi=no&alerts=no");
+  return await data.json();
 }
 
 loadCoordinates()
@@ -164,5 +142,5 @@ function handleSelectedDay(weekday, forecastday) {
     humidity: Math.ceil(forecastday.day.avghumidity),
     wind: Math.ceil(forecastday.day.avgvis_km),
   };
-  render(weatherInfo)
+  render(weatherInfo);
 }
